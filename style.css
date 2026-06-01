@@ -631,6 +631,22 @@ body {
   opacity: 1;
 }
 
+/* Y+3 초대형 PJT 카드 강조 */
+.project-card-featured {
+  border-color: rgba(16, 185, 129, 0.25);
+  background: linear-gradient(135deg, rgba(16,185,129,0.05) 0%, rgba(6,182,212,0.05) 100%);
+}
+
+.project-card-featured::before {
+  background: linear-gradient(90deg, var(--accent-success), var(--accent-tertiary));
+  opacity: 1 !important;
+}
+
+.project-card-featured:hover {
+  border-color: rgba(16, 185, 129, 0.5);
+  box-shadow: var(--shadow-xl), 0 0 30px rgba(16, 185, 129, 0.15);
+}
+
 .project-card-icon {
   width: 48px;
   height: 48px;
