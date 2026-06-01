@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>박형권 — 이력서</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --accent: #2563eb;
+      --accent-light: #dbeafe;
+      --text-primary: #111827;
+      --text-secondary: #374151;
+      --text-tertiary: #6b7280;
+      --border: #e5e7eb;
+      --border-light: #f3f4f6;
+      --bg: #ffffff;
+      --font-serif: 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+      --font-sans: 'Noto Sans KR', 'Segoe UI', Arial, sans-serif;
+    }
+
+    html {
+      font-size: 10px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 1.4rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      background: #f9fafb;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ===== Page Container ===== */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 2rem auto;
+      background: var(--bg);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 6px 16px rgba(0,0,0,0.04);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ===== Top Accent Bar ===== */
+    .page::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), #3b82f6, var(--accent));
+    }
+
+    .page-inner {
+      padding: 36px 48px 40px;
+    }
+
+    /* ===== Header ===== */
+    .header {
+      margin-bottom: 24px;
+    }
+
+    .header-name {
+      font-family: var(--font-serif);
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .header-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 24px;
+      font-size: 1.28rem;
+      color: var(--text-tertiary);
+    }
+
+    .header-contact a {
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .header-contact a:hover {
+      color: var(--accent);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .contact-icon {
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0;
+      opacity: 0.55;
+    }
+
+    /* ===== Divider ===== */
+    .divider {
+      border: none;
+      height: 1px;
+      background: var(--border);
+      margin: 0;
+    }
+
+    .divider-strong {
+      height: 1.5px;
+      background: linear-gradient(90deg, var(--accent), var(--border) 50%);
+    }
+
+    /* ===== Summary ===== */
+    .summary {
+      margin: 20px 0 22px;
+      padding: 14px 20px;
+      background: var(--border-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      font-size: 1.32rem;
+      line-height: 1.85;
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+
+    /* ===== Section ===== */
+    .section {
+      margin-bottom: 22px;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      border-bottom: 1.5px solid var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 3px;
+      height: 16px;
+      background: var(--accent);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    /* ===== Experience Block ===== */
+    .exp-block {
+      margin-bottom: 18px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .exp-block:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px 12px;
+      margin-bottom: 3px;
+    }
+
+    .exp-role {
+      font-family: var(--font-serif);
+      font-size: 1.44rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    .exp-period {
+      font-size: 1.2rem;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .exp-company {
+      font-size: 1.26rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .exp-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .exp-list li {
+      position: relative;
+      padding-left: 16px;
+      font-size: 1.3rem;
+      line-height: 1.75;
+      color: var(--text-secondary);
+    }
+
+    .exp-list li::before {
+      content: '';
+      position: absolute;
+      left: 2px;
+      top: 10px;
+      width: 4px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .exp-list li + li {
+      margin-top: 2px;
+    }
+
+    .highlight {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .tag-future {
+      display: inline-block;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 0px 7px;
+      border-radius: 3px;
+      vertical-align: middle;
+      margin-left: 2px;
+    }
+
+    /* ===== Projects ===== */
+    .project-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .project-item {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-size: 1.3rem;
+      line-height: 1.65;
+    }
+
+    .project-name {
+      font-weight: 600;
+      color: var(--text-primary);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .project-year {
+      font-size: 1.1rem;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .project-desc {
+      color: var(--text-secondary);
+    }
+
+    .project-dot {
+      color: var(--border);
+      flex-shrink: 0;
+    }
+
+    /* ===== Skills ===== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 32px;
+    }
+
+    .skill-category {
+      font-size: 1.3rem;
+      line-height: 1.7;
+    }
+
+    .skill-label {
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-right: 6px;
+      display: inline;
+    }
+
+    .skill-items {
+      color: var(--text-secondary);
+      display: inline;
+    }
+
+    /* ===== Education ===== */
+    .edu-block {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px 12px;
+    }
+
+    .edu-school {
+      font-size: 1.34rem;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .edu-period {
+      font-size: 1.2rem;
+      color: var(--text-tertiary);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .edu-major {
+      font-size: 1.26rem;
+      color: var(--text-secondary);
+      width: 100%;
+    }
+
+    /* ===== Print Styles ===== */
+    @media print {
+      html {
+        font-size: 10px;
+      }
+
+      body {
+        background: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .page {
+        width: 100%;
+        min-height: auto;
+        margin: 0;
+        box-shadow: none;
+        page-break-after: avoid;
+        page-break-inside: avoid;
+      }
+
+      .page::before {
+        height: 4px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page-inner {
+        padding: 28px 40px 32px;
+      }
+
+      .summary {
+        background: var(--border-light) !important;
+        border-left-color: var(--accent) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .section-title::before {
+        background: var(--accent) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .exp-list li::before {
+        background: var(--accent) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .tag-future {
+        background: var(--accent-light) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .exp-block {
+        page-break-inside: avoid;
+      }
+
+      .section {
+        page-break-inside: avoid;
+      }
+
+      @page {
+        size: A4;
+        margin: 12mm 0;
+      }
+    }
+
+    /* ===== Screen responsive ===== */
+    @media screen and (max-width: 800px) {
+      .page {
+        width: 100%;
+        min-height: auto;
+        margin: 0;
+        box-shadow: none;
+      }
+
+      .page-inner {
+        padding: 24px 20px 28px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="page-inner">
+
+      <!-- Header -->
+      <header class="header">
+        <h1 class="header-name">박형권</h1>
+        <div class="header-contact">
+          <span class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,7 12,13 2,7"/></svg>
+            <a href="mailto:pen_ta@naver.com">pen_ta@naver.com</a>
+          </span>
+          <span class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <a href="https://github.com/hagonie" target="_blank">github.com/hagonie</a>
+          </span>
+          <span class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <a href="https://hagotools.com" target="_blank">hagotools.com</a>
+          </span>
+        </div>
+      </header>
+
+      <hr class="divider divider-strong">
+
+      <!-- Summary -->
+      <p class="summary">
+        공정 엔지니어에서 시작해 기획/인력운영, 그리고 AI/데이터분석까지 — 현장의 언어와 데이터의 언어를 모두 구사하는 <strong>기획형 올라운더</strong>. AI로 가능한 것과 불가능한 것을 이해하고, 회사의 Y+3 방향성을 제시할 수 있는 기획자.
+      </p>
+
+      <!-- Experience -->
+      <section class="section">
+        <h2 class="section-title">경력</h2>
+
+        <div class="exp-block">
+          <div class="exp-header">
+            <span class="exp-role">AI / 빅데이터분석 엔지니어</span>
+            <span class="exp-period">2025.02 — 현재</span>
+          </div>
+          <div class="exp-company">LG Display · AI 수율개선팀 (사내공모 전환)</div>
+          <ul class="exp-list">
+            <li>Python 기반 데이터 파이프라인 <strong>End-to-End</strong> 구축</li>
+            <li>변화점 탐지(CPD) 알고리즘 독자 개발 → 최적 관리선 도출</li>
+            <li>수율 <span class="highlight">0.13%p 개선</span> → CEO BP 보고, AX 협업 우수 사례 선정</li>
+            <li>향후 계획 : 완전자동 불량분석 Agent 개발 <span class="tag-future">Y+3</span></li>
+          </ul>
+        </div>
+
+        <div class="exp-block">
+          <div class="exp-header">
+            <span class="exp-role">기획 / 인력운영 담당 <span style="font-weight:400; font-size:1.2rem; color:var(--text-tertiary);">(선임→책임 조기진급)</span></span>
+            <span class="exp-period">2019.03 — 2025.02</span>
+          </div>
+          <div class="exp-company">LG Display · 중대형 제조기획2팀</div>
+          <ul class="exp-list">
+            <li>KPI 기획/관리, 수익성 극대화 미션 수립</li>
+            <li><strong>'필요 인원 산출 기준'</strong> 정립 (물동·Capa·설비 데이터 기반)</li>
+            <li>기능직 <span class="highlight">30%(400명 규모)</span> 인력 효율화 달성</li>
+            <li>대규모 인사이동 연계 조직 심리 동인 분석</li>
+            <li>직무 역량 레벨 정의 및 교육 계획 수립</li>
+          </ul>
+        </div>
+
+        <div class="exp-block">
+          <div class="exp-header">
+            <span class="exp-role">TFT Photo 공정 엔지니어</span>
+            <span class="exp-period">2017.08 — 2019.02</span>
+          </div>
+          <div class="exp-company">LG Display · P8 TFT1팀</div>
+          <ul class="exp-list">
+            <li>CDS(Coater &amp; Developer System) 설비 담당</li>
+            <li>Merck社 신규 약액 양산 라인 직도입 — 평가부터 조달까지 주도</li>
+            <li>양산 Line 불량 대응 및 유관부서 협업을 통한 Issue 해결</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Key Projects -->
+      <section class="section">
+        <h2 class="section-title">핵심 프로젝트</h2>
+        <div class="project-grid">
+          <div class="project-item">
+            <span class="project-name">400명 인력 효율화</span>
+            <span class="project-year">(2022–2024)</span>
+            <span class="project-dot">—</span>
+            <span class="project-desc">데이터 기반 필요 인원 산출 Logic 수립, 기능직 30% 효율화</span>
+          </div>
+          <div class="project-item">
+            <span class="project-name">수율 개선 알고리즘</span>
+            <span class="project-year">(2025)</span>
+            <span class="project-dot">—</span>
+            <span class="project-desc">CPD 알고리즘 독자 개발, 수율 0.13%p↑, CEO 보고</span>
+          </div>
+          <div class="project-item">
+            <span class="project-name">조직 심리 동인 분석</span>
+            <span class="project-year">(2024)</span>
+            <span class="project-dot">—</span>
+            <span class="project-desc">인사이동-설문 상관관계 분석, 임원진 보고</span>
+          </div>
+          <div class="project-item">
+            <span class="project-name">궁극의 불량분석 Agent 개발</span>
+            <span class="project-year">(2026~)</span>
+            <span class="project-dot">—</span>
+            <span class="project-desc">LLM/RAG/FastAPI 기반 E2E 불량분석 Tool <span class="tag-future">Y+3</span></span>
+          </div>
+          <div class="project-item">
+            <span class="project-name">HaGoTools</span>
+            <span class="project-year">(hagotools.com)</span>
+            <span class="project-dot">—</span>
+            <span class="project-desc">직군별 AI 업무 자동화 웹서비스 (어린이집 교사 포털 운영 중)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="section">
+        <h2 class="section-title">기술</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <span class="skill-label">데이터 / 분석</span>
+            <span class="skill-items">Python, Pandas, SQL, Matplotlib, Plotly</span>
+          </div>
+          <div class="skill-category">
+            <span class="skill-label">AI / ML</span>
+            <span class="skill-items">LLM, RAG, Prompt Engineering, Scikit-learn</span>
+          </div>
+          <div class="skill-category">
+            <span class="skill-label">도메인</span>
+            <span class="skill-items">FDC/CTQ 공정관리, KPI 기획, 인력운영</span>
+          </div>
+          <div class="skill-category">
+            <span class="skill-label">개발 / 도구</span>
+            <span class="skill-items">FastAPI, Git/GitHub, AI Tools</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="section">
+        <h2 class="section-title">학력</h2>
+        <div class="edu-block">
+          <span class="edu-school">인하대학교 · 항공우주공학과 학사</span>
+          <span class="edu-period">2010.03 — 2017.02</span>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</body>
+</html>
