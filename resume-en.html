@@ -252,8 +252,19 @@
       justify-content: space-between;
       align-items: baseline;
       flex-wrap: wrap;
-      gap: 4px 12px;
-      margin-bottom: 3px;
+      gap: 4px 8px;
+      margin-bottom: 5px;
+    }
+
+    .exp-header-left {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .exp-sep {
+      color: var(--border);
+      font-weight: 300;
     }
 
     .exp-role {
@@ -272,18 +283,9 @@
     }
 
     .exp-company {
-      font-size: 1.26rem;
+      font-size: 1.2rem;
       color: var(--accent);
       font-weight: 500;
-      margin-bottom: 5px;
-      display: inline;
-    }
-
-    .exp-company-line {
-      margin-bottom: 5px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
 
     .exp-tag {
@@ -595,12 +597,13 @@
 
         <div class="exp-block">
           <div class="exp-header">
-            <span class="exp-role">AI / Big Data Analysis Engineer</span>
+            <div class="exp-header-left">
+              <span class="exp-role">AI / Big Data Analysis Engineer</span>
+              <span class="exp-sep">|</span>
+              <span class="exp-company">LG Display · AI Yield Improvement Team</span>
+              <span class="exp-tag ai">AI</span>
+            </div>
             <span class="exp-period">Feb 2025 — Present</span>
-          </div>
-          <div class="exp-company-line">
-            <span class="exp-company">LG Display · AI Yield Improvement Team (Internal Transfer)</span>
-            <span class="exp-tag ai">AI</span>
           </div>
           <ul class="exp-list">
             <li>Built end-to-end data pipeline using Python</li>
@@ -613,12 +616,13 @@
 
         <div class="exp-block">
           <div class="exp-header">
-            <span class="exp-role">Planning / Workforce Management</span>
+            <div class="exp-header-left">
+              <span class="exp-role">Planning / Workforce Management</span>
+              <span class="exp-sep">|</span>
+              <span class="exp-company">LG Display · Manufacturing Planning Team 2</span>
+              <span class="exp-tag plan">Planning</span>
+            </div>
             <span class="exp-period">Mar 2019 — Feb 2025</span>
-          </div>
-          <div class="exp-company-line">
-            <span class="exp-company">LG Display · Large Display Manufacturing Planning Team 2</span>
-            <span class="exp-tag plan">Planning</span>
           </div>
           <ul class="exp-list">
             <li>KPI planning/management, profitability maximization mission</li>
@@ -632,12 +636,13 @@
 
         <div class="exp-block">
           <div class="exp-header">
-            <span class="exp-role">TFT Photo Process Engineer</span>
+            <div class="exp-header-left">
+              <span class="exp-role">TFT Photo Process Engineer</span>
+              <span class="exp-sep">|</span>
+              <span class="exp-company">LG Display · P8 TFT1 Team</span>
+              <span class="exp-tag field">Field</span>
+            </div>
             <span class="exp-period">Aug 2017 — Feb 2019</span>
-          </div>
-          <div class="exp-company-line">
-            <span class="exp-company">LG Display · P8 TFT1 Team</span>
-            <span class="exp-tag field">Field</span>
           </div>
           <ul class="exp-list">
             <li>Managed CDS (Coater &amp; Developer System) equipment</li>
