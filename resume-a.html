@@ -432,7 +432,7 @@
     /* ===== Print Styles ===== */
     @media print {
       html {
-        font-size: 10px;
+        font-size: 8.5px;
       }
 
       body {
@@ -443,31 +443,38 @@
 
       .page {
         width: 100%;
+        max-height: none;
         min-height: auto;
         margin: 0;
         box-shadow: none;
-        page-break-after: avoid;
-        page-break-inside: avoid;
+        overflow: visible;
       }
 
       .page::before {
-        height: 4px;
+        height: 3px;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
 
       .page-inner {
-        padding: 28px 40px 32px;
+        padding: 16px 28px 12px;
       }
 
+      .header { margin-bottom: 10px; }
+      .header-name { font-size: 2.6rem; margin-bottom: 6px; }
+
       .summary {
+        margin: 8px 0 4px;
+        padding: 8px 12px;
         background: var(--border-light) !important;
         border-left-color: var(--accent) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
 
+      .metrics { gap: 6px; margin: 8px 0 10px; }
       .metric-card {
+        padding: 6px 4px 5px;
         border-color: var(--border) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
@@ -479,17 +486,23 @@
         print-color-adjust: exact;
       }
 
+      .section { margin-bottom: 8px; }
+      .section-title { margin-bottom: 6px; padding-bottom: 3px; }
       .section-title::before {
         background: var(--accent) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
 
+      .exp-block { margin-bottom: 6px; padding-bottom: 5px; }
+      .exp-list li { line-height: 1.5; }
       .exp-list li::before {
         background: var(--accent) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
+
+      .project-grid { gap: 3px; }
 
       .tag-future {
         background: var(--accent-light) !important;
@@ -497,17 +510,9 @@
         print-color-adjust: exact;
       }
 
-      .exp-block {
-        page-break-inside: avoid;
-      }
-
-      .section {
-        page-break-inside: avoid;
-      }
-
       @page {
         size: A4;
-        margin: 12mm 0;
+        margin: 6mm 0;
       }
     }
 
