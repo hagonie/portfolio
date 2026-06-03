@@ -77,7 +77,10 @@
 
     /* ===== Header ===== */
     .header {
-      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 12px;
     }
 
     .header-name {
@@ -87,14 +90,14 @@
       color: var(--text-primary);
       letter-spacing: -0.02em;
       line-height: 1.2;
-      margin-bottom: 8px;
     }
 
     .header-contact {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px 24px;
-      font-size: 1.28rem;
+      justify-content: flex-end;
+      gap: 4px 18px;
+      font-size: 1.2rem;
       color: var(--text-tertiary);
     }
 
@@ -161,25 +164,25 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 8px;
-      margin: 12px 0 16px;
+      margin: 10px 0 14px;
     }
 
     .metric-card {
       text-align: center;
-      padding: 10px 6px 8px;
-      border-radius: 6px;
+      padding: 7px 4px 6px;
+      border-radius: 5px;
       border: 1px solid var(--border);
       background: var(--bg);
     }
 
     .metric-card .metric-tag {
       display: inline-block;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 700;
       letter-spacing: 0.04em;
-      padding: 1px 8px;
+      padding: 0px 6px;
       border-radius: 3px;
-      margin-bottom: 6px;
+      margin-bottom: 3px;
     }
 
     .metric-card.field .metric-tag { color: var(--tag-field); background: var(--tag-field-bg); }
@@ -189,17 +192,17 @@
 
     .metric-value {
       font-family: var(--font-serif);
-      font-size: 1.9rem;
+      font-size: 1.56rem;
       font-weight: 700;
       color: var(--text-primary);
       line-height: 1.3;
-      margin-bottom: 3px;
+      margin-bottom: 1px;
     }
 
     .metric-label {
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: var(--text-tertiary);
-      line-height: 1.4;
+      line-height: 1.3;
     }
 
     /* ===== Section ===== */
@@ -273,20 +276,22 @@
       font-size: 1.26rem;
       color: var(--accent);
       font-weight: 500;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
+      display: inline;
     }
 
-    .exp-tags {
+    .exp-company-line {
+      margin-bottom: 5px;
       display: flex;
-      gap: 5px;
-      margin-bottom: 7px;
+      align-items: center;
+      gap: 8px;
     }
 
     .exp-tag {
       display: inline-block;
-      font-size: 1.02rem;
+      font-size: 0.95rem;
       font-weight: 700;
-      padding: 1px 8px;
+      padding: 0px 6px;
       border-radius: 3px;
       letter-spacing: 0.02em;
     }
@@ -512,7 +517,7 @@
 
       @page {
         size: A4;
-        margin: 6mm 0;
+        margin: 8mm 10mm;
       }
     }
 
@@ -547,18 +552,9 @@
       <header class="header">
         <h1 class="header-name">박형권</h1>
         <div class="header-contact">
-          <span class="contact-item">
-            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,7 12,13 2,7"/></svg>
-            <a href="mailto:pen_ta@naver.com">pen_ta@naver.com</a>
-          </span>
-          <span class="contact-item">
-            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            <a href="https://github.com/hagonie" target="_blank">github.com/hagonie</a>
-          </span>
-          <span class="contact-item">
-            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            <a href="https://hagotools.com" target="_blank">hagotools.com</a>
-          </span>
+          <span class="contact-item">pen_ta@naver.com</span>
+          <span class="contact-item"><a href="https://github.com/hagonie" target="_blank">github.com/hagonie</a></span>
+          <span class="contact-item"><a href="https://hagotools.com" target="_blank">hagotools.com</a></span>
         </div>
       </header>
 
@@ -603,10 +599,9 @@
             <span class="exp-role">AI / 빅데이터분석 엔지니어</span>
             <span class="exp-period">2025.02 — 현재</span>
           </div>
-          <div class="exp-company">LG Display · AI 수율개선팀 (사내공모 전환)</div>
-          <div class="exp-tags">
+          <div class="exp-company-line">
+            <span class="exp-company">LG Display · AI 수율개선팀 (사내공모 전환)</span>
             <span class="exp-tag ai">AI</span>
-            <span class="exp-tag field">현업</span>
           </div>
           <ul class="exp-list">
             <li>Python 기반 데이터 파이프라인 <strong>End-to-End</strong> 구축</li>
@@ -622,8 +617,8 @@
             <span class="exp-role">기획 / 인력운영 담당</span>
             <span class="exp-period">2019.03 — 2025.02</span>
           </div>
-          <div class="exp-company">LG Display · 중대형 제조기획2팀</div>
-          <div class="exp-tags">
+          <div class="exp-company-line">
+            <span class="exp-company">LG Display · 중대형 제조기획2팀</span>
             <span class="exp-tag plan">기획</span>
           </div>
           <ul class="exp-list">
@@ -641,8 +636,8 @@
             <span class="exp-role">TFT Photo 공정 엔지니어</span>
             <span class="exp-period">2017.08 — 2019.02</span>
           </div>
-          <div class="exp-company">LG Display · P8 TFT1팀</div>
-          <div class="exp-tags">
+          <div class="exp-company-line">
+            <span class="exp-company">LG Display · P8 TFT1팀</span>
             <span class="exp-tag field">현업</span>
           </div>
           <ul class="exp-list">
