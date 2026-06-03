@@ -12,6 +12,42 @@
   <title>박형권 — Data & AI Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+  <style>
+    /* Language Toggle Button Styles */
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 0;
+      cursor: pointer;
+      font-size: 0.8rem;
+      overflow: hidden;
+      margin-left: 0.5rem;
+      flex-shrink: 0;
+    }
+    .lang-toggle-option {
+      padding: 6px 12px;
+      color: rgba(255,255,255,0.5);
+      transition: all 0.3s ease;
+      font-weight: 500;
+      white-space: nowrap;
+      user-select: none;
+    }
+    .lang-toggle-option.active {
+      background: rgba(59,130,246,0.25);
+      color: #fff;
+    }
+    .lang-toggle-option:hover:not(.active) {
+      color: rgba(255,255,255,0.8);
+    }
+    @media (max-width: 768px) {
+      .lang-toggle {
+        margin: 0.5rem auto 0;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -24,13 +60,18 @@
     <div class="nav-container">
       <a href="#" class="nav-logo">PHG.</a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#career">경력</a></li>
-        <li><a href="#projects">프로젝트</a></li>
-        <li><a href="#skills">기술 스택</a></li>
-        <li><a href="#automation">AI 자동화</a></li>
-        <li><a href="#contact">연락하기</a></li>
-        <li><a href="resume-kr.html" target="_blank">이력서 🇰🇷</a></li>
-        <li><a href="resume-en.html" target="_blank">Resume 🇺🇸</a></li>
+        <li><a href="#career" data-ko="경력" data-en="Career">경력</a></li>
+        <li><a href="#projects" data-ko="프로젝트" data-en="Projects">프로젝트</a></li>
+        <li><a href="#skills" data-ko="기술 스택" data-en="Tech Stack">기술 스택</a></li>
+        <li><a href="#automation" data-ko="AI 자동화" data-en="AI Automation">AI 자동화</a></li>
+        <li><a href="#contact" data-ko="연락하기" data-en="Contact">연락하기</a></li>
+        <li><a href="resume-kr.html" target="_blank" id="resumeLink" data-ko="이력서" data-en="Resume">이력서</a></li>
+        <li>
+          <div class="lang-toggle" id="langToggle">
+            <span class="lang-toggle-option active" data-lang="ko">🇰🇷 KR</span>
+            <span class="lang-toggle-option" data-lang="en">🇺🇸 EN</span>
+          </div>
+        </li>
       </ul>
       <button class="nav-mobile-toggle" id="navToggle" aria-label="메뉴 열기">
         <span></span>
@@ -43,16 +84,16 @@
   <!-- Hero Section -->
   <section class="hero" id="hero">
     <div class="hero-content">
-      <div class="hero-badge">
+      <div class="hero-badge" data-ko="현재 이직 준비 중 — 새로운 도전을 찾고 있습니다" data-en="Currently open to new opportunities" data-i18n-mode="badge">
         <span class="status-dot"></span>
         현재 이직 준비 중 — 새로운 도전을 찾고 있습니다
       </div>
-      <h1 class="hero-name">
+      <h1 class="hero-name" data-ko="안녕하세요,<br><span class='gradient-text'>박형권</span>입니다." data-en="Hello,<br><span class='gradient-text'>Park Hyeonggwon</span>." data-i18n-mode="html">
         안녕하세요,<br>
         <span class="gradient-text">박형권</span>입니다.
       </h1>
-      <p class="hero-title">현업 & 기획 & AI</p>
-      <p class="hero-description">
+      <p class="hero-title" data-ko="현업 &amp; 기획 &amp; AI" data-en="Field &amp; Planning &amp; AI">현업 & 기획 & AI</p>
+      <p class="hero-description" data-ko="공정 엔지니어에서 시작해 기획/인력운영, 그리고 AI/데이터분석까지 — <strong>현장의 언어와 데이터의 언어를 모두 구사</strong>하는 기획형 올라운더입니다. AI로 가능한 것과 불가능한 것을 이해하고, 회사의 Y+3 방향성을 제시할 수 있는 기획자입니다." data-en="From process engineer to planning/workforce management, then to AI/data analysis — an <strong>all-rounder fluent in both the language of the manufacturing floor and the language of data</strong>. I understand what AI can and cannot do, and can chart the company's Y+3 direction." data-i18n-mode="html">
         공정 엔지니어에서 시작해 기획/인력운영, 그리고 AI/데이터분석까지 — 
         <strong>현장의 언어와 데이터의 언어를 모두 구사</strong>하는 기획형 올라운더입니다.
         AI로 가능한 것과 불가능한 것을 이해하고, 회사의 Y+3 방향성을 제시할 수 있는 기획자입니다.
@@ -60,27 +101,27 @@
       <!-- Stat 스토리: 현업 → 기획 → AI → 현업+기획+AI 통합 -->
       <div class="hero-stats">
         <div class="hero-stat" title="현업">
-          <div class="hero-stat-value">공정/장비</div>
+          <div class="hero-stat-value" data-ko="공정/장비" data-en="Process/Equip">공정/장비</div>
           <div class="hero-stat-label">TFT Photo Engineer</div>
         </div>
         <div class="hero-stat" title="기획">
           <div class="hero-stat-value" data-count="400">0</div>
-          <div class="hero-stat-label">인력 효율화 규모</div>
+          <div class="hero-stat-label" data-ko="인력 효율화 규모" data-en="Workforce Optimized">인력 효율화 규모</div>
         </div>
         <div class="hero-stat" title="AI">
-          <div class="hero-stat-value">개발 2건</div>
-          <div class="hero-stat-label">불량분석 알고리즘</div>
+          <div class="hero-stat-value" data-ko="독자개발" data-en="Self-Developed">독자개발</div>
+          <div class="hero-stat-label" data-ko="CPD 알고리즘" data-en="CPD Algorithm">CPD 알고리즘</div>
         </div>
         <div class="hero-stat hero-stat-highlight" title="현업+기획+AI 통합">
-          <div class="hero-stat-value" style="font-size: 1.3rem; line-height:1.3;">초대형 PJT</div>
-          <div class="hero-stat-label">Y+3 불량분석<br>알고리즘 개발</div>
+          <div class="hero-stat-value" style="font-size: 1.3rem; line-height:1.3;" data-ko="초대형 PJT" data-en="Mega PJT">초대형 PJT</div>
+          <div class="hero-stat-label" data-ko="Y+3 불량분석<br>알고리즘 개발" data-en="Y+3 Defect Analysis<br>Agent Dev" data-i18n-mode="html">Y+3 불량분석<br>알고리즘 개발</div>
         </div>
       </div>
       <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">
+        <a href="#projects" class="btn btn-primary" data-ko="<span>🔍</span> 프로젝트 보기" data-en="<span>🔍</span> View Projects" data-i18n-mode="html">
           <span>🔍</span> 프로젝트 보기
         </a>
-        <a href="#contact" class="btn btn-secondary">
+        <a href="#contact" class="btn btn-secondary" data-ko="<span>📧</span> 연락하기" data-en="<span>📧</span> Contact Me" data-i18n-mode="html">
           <span>📧</span> 연락하기
         </a>
       </div>
@@ -91,8 +132,8 @@
   <section class="section" id="career">
     <div class="reveal">
       <span class="section-label"><span class="dot"></span> Career</span>
-      <h2 class="section-title">커리어 여정</h2>
-      <p class="section-subtitle">
+      <h2 class="section-title" data-ko="커리어 여정" data-en="Career Journey">커리어 여정</h2>
+      <p class="section-subtitle" data-ko="현장 → 기획 → AI.<br>현장을 알아야 기획을 할 수 있고,<br>이제는 AI를 알아야 기획을 할 수 있습니다." data-en="Field → Planning → AI.<br>You need to know the field to plan.<br>Now, you need to know AI to plan." data-i18n-mode="html">
         현장 → 기획 → AI.<br>
         현장을 알아야 기획을 할 수 있고,<br>
         이제는 AI를 알아야 기획을 할 수 있습니다.
@@ -102,61 +143,60 @@
     <div class="timeline" style="margin-top: 3rem;">
       <!-- Current -->
       <div class="timeline-item current">
-        <span class="timeline-period">2025.02 — 현재</span>
-        <h3 class="timeline-role">AI / 빅데이터분석 엔지니어</h3>
-        <p class="timeline-company">LG Display · AI 수율개선팀 (사내공모 전환)</p>
-        <p class="timeline-desc">
+        <span class="timeline-period" data-ko="2025.02 — 현재" data-en="Feb 2025 — Present">2025.02 — 현재</span>
+        <h3 class="timeline-role" data-ko="AI / 빅데이터분석 엔지니어" data-en="AI / Big Data Analysis Engineer">AI / 빅데이터분석 엔지니어</h3>
+        <p class="timeline-company" data-ko="LG Display · AI 수율개선팀 (사내공모 전환)" data-en="LG Display · AI Yield Improvement Team (Internal Transfer)">LG Display · AI 수율개선팀 (사내공모 전환)</p>
+        <p class="timeline-desc" data-ko="빅데이터 기반 수율 개선 파이프라인 구축 및 머신러닝 모델링을 담당하고 있습니다." data-en="Building big data-based yield improvement pipelines and ML modeling.">
           빅데이터 기반 수율 개선 파이프라인 구축 및 머신러닝 모델링을 담당하고 있습니다.
         </p>
         <ul class="timeline-highlights">
-          <li>Python 기반 데이터 파이프라인 End-to-End 구축</li>
-          <li>변화점 탐지(CPD) 알고리즘 독자 개발 → 최적 관리선 도출</li>
-          <li>이상탐지 알고리즘 개발 — 공정 파라미터 기반 자동 이상 검출</li>
-          <li>수율 0.13%p 개선 → CEO BP 보고, AX 협업 우수 사례 선정</li>
-          <li>향후 계획 : 완전자동 불량분석 Agent 개발 (Y+3, 팀프로젝트)</li>
+          <li data-ko="Python 기반 데이터 파이프라인 End-to-End 구축" data-en="Built end-to-end data pipeline with Python">Python 기반 데이터 파이프라인 End-to-End 구축</li>
+          <li data-ko="변화점 탐지(CPD) 알고리즘 독자 개발 → 최적 관리선 도출" data-en="Independently developed Change Point Detection (CPD) algorithm → derived optimal control limits">변화점 탐지(CPD) 알고리즘 독자 개발 → 최적 관리선 도출</li>
+          <li data-ko="수율 0.13%p 개선 → CEO BP 보고, AX 협업 우수 사례 선정" data-en="Improved yield by 0.13%p → Reported to CEO as Best Practice, selected as AX collaboration excellence case">수율 0.13%p 개선 → CEO BP 보고, AX 협업 우수 사례 선정</li>
+          <li data-ko="향후 계획 : 완전자동 불량분석 Agent 개발 (Y+3, 팀프로젝트)" data-en="Future plan: Fully automated defect analysis Agent development (Y+3, team project)">향후 계획 : 완전자동 불량분석 Agent 개발 (Y+3, 팀프로젝트)</li>
         </ul>
       </div>
 
       <!-- Planning -->
       <div class="timeline-item">
         <span class="timeline-period">2019.03 — 2025.02</span>
-        <h3 class="timeline-role">기획 / 인력운영 담당 (선임→책임 조기진급)</h3>
-        <p class="timeline-company">LG Display · 중대형 제조기획2팀</p>
-        <p class="timeline-desc">
+        <h3 class="timeline-role" data-ko="기획 / 인력운영 담당 (선임→책임 조기진급)" data-en="Planning / Workforce Mgmt (Early Promotion)">기획 / 인력운영 담당 (선임→책임 조기진급)</h3>
+        <p class="timeline-company" data-ko="LG Display · 중대형 제조기획2팀" data-en="LG Display · Manufacturing Planning Team 2">LG Display · 중대형 제조기획2팀</p>
+        <p class="timeline-desc" data-ko="공장 KPI 기획·관리 및 인력 운영 전략 수립을 통해 제조 현장의 체질 개선을 주도했습니다." data-en="Led manufacturing transformation through factory KPI planning/management and workforce operation strategy.">
           공장 KPI 기획·관리 및 인력 운영 전략 수립을 통해 제조 현장의 체질 개선을 주도했습니다.
         </p>
         <ul class="timeline-highlights">
-          <li>KPI 기획/관리, 수익성 극대화 미션 수립</li>
-          <li>'필요 인원 산출 기준' 정립 (물동·Capa·설비 데이터 기반)</li>
-          <li>기능직 30%(400명 규모) 인력 효율화 달성</li>
-          <li>대규모 인사이동 연계 조직 심리 동인 분석</li>
-          <li>직무 역량 레벨 정의 및 교육 계획 수립</li>
+          <li data-ko="KPI 기획/관리, 수익성 극대화 미션 수립" data-en="KPI planning/management, profitability maximization mission">KPI 기획/관리, 수익성 극대화 미션 수립</li>
+          <li data-ko="'필요 인원 산출 기준' 정립 (물동·Capa·설비 데이터 기반)" data-en="Established 'headcount calculation criteria' (based on volume, capacity, equipment data)">'필요 인원 산출 기준' 정립 (물동·Capa·설비 데이터 기반)</li>
+          <li data-ko="기능직 30%(400명 규모) 인력 효율화 달성" data-en="Achieved 30% workforce optimization (400 operators)">기능직 30%(400명 규모) 인력 효율화 달성</li>
+          <li data-ko="대규모 인사이동 연계 조직 심리 동인 분석" data-en="Organizational psychology driver analysis linked to large-scale personnel transfers">대규모 인사이동 연계 조직 심리 동인 분석</li>
+          <li data-ko="직무 역량 레벨 정의 및 교육 계획 수립" data-en="Defined job competency levels and established training plans">직무 역량 레벨 정의 및 교육 계획 수립</li>
         </ul>
       </div>
 
       <!-- Engineer -->
       <div class="timeline-item">
         <span class="timeline-period">2017.08 — 2019.02</span>
-        <h3 class="timeline-role">TFT Photo 공정 엔지니어</h3>
-        <p class="timeline-company">LG Display · P8 TFT1팀</p>
-        <p class="timeline-desc">
+        <h3 class="timeline-role" data-ko="TFT Photo 공정 엔지니어" data-en="TFT Photo Process Engineer">TFT Photo 공정 엔지니어</h3>
+        <p class="timeline-company" data-ko="LG Display · P8 TFT1팀" data-en="LG Display · P8 TFT1 Team">LG Display · P8 TFT1팀</p>
+        <p class="timeline-desc" data-ko="디스플레이 제조 공정의 양산 라인 관리 및 신규 재료 도입을 수행했습니다." data-en="Managed production lines and introduced new materials for display manufacturing processes.">
           디스플레이 제조 공정의 양산 라인 관리 및 신규 재료 도입을 수행했습니다.
         </p>
         <ul class="timeline-highlights">
-          <li>CDS(Coater &amp; Developer System) 설비 담당</li>
-          <li>Merck社 신규 약액 양산 라인 직도입 — 평가부터 조달까지 주도</li>
-          <li>양산 Line 불량 대응 및 유관부서 협업을 통한 Issue 해결</li>
+          <li data-ko="CDS(Coater &amp; Developer System) 설비 담당" data-en="Managed CDS (Coater &amp; Developer System) equipment">CDS(Coater &amp; Developer System) 설비 담당</li>
+          <li data-ko="Merck社 신규 약액 양산 라인 직도입 — 평가부터 조달까지 주도" data-en="Direct introduction of Merck's new chemicals to production line — led from evaluation to procurement">Merck社 신규 약액 양산 라인 직도입 — 평가부터 조달까지 주도</li>
+          <li data-ko="양산 Line 불량 대응 및 유관부서 협업을 통한 Issue 해결" data-en="Resolved production line defects through cross-functional collaboration">양산 Line 불량 대응 및 유관부서 협업을 통한 Issue 해결</li>
         </ul>
       </div>
 
       <!-- Education -->
       <div class="timeline-item">
         <span class="timeline-period">2010.03 — 2017.02</span>
-        <h3 class="timeline-role">항공우주공학 학사</h3>
-        <p class="timeline-company">인하대학교 · 항공우주공학과</p>
+        <h3 class="timeline-role" data-ko="항공우주공학 학사" data-en="B.S. Aerospace Engineering">항공우주공학 학사</h3>
+        <p class="timeline-company" data-ko="인하대학교 · 항공우주공학과" data-en="Inha University · Aerospace Engineering">인하대학교 · 항공우주공학과</p>
         <ul class="timeline-highlights">
-          <li>항공 제어 시스템 설계(기초)</li>
-          <li>태양광 글라이더 설계 및 제작, 비행 시연</li>
+          <li data-ko="항공 제어 시스템 설계(기초)" data-en="Flight control system design (fundamentals)">항공 제어 시스템 설계(기초)</li>
+          <li data-ko="태양광 글라이더 설계 및 제작, 비행 시연" data-en="Solar glider design, fabrication, and flight demonstration">태양광 글라이더 설계 및 제작, 비행 시연</li>
         </ul>
       </div>
     </div>
@@ -166,8 +206,8 @@
   <section class="section" id="projects">
     <div class="reveal">
       <span class="section-label"><span class="dot"></span> Projects</span>
-      <h2 class="section-title">핵심 프로젝트</h2>
-      <p class="section-subtitle">
+      <h2 class="section-title" data-ko="핵심 프로젝트" data-en="Key Projects">핵심 프로젝트</h2>
+      <p class="section-subtitle" data-ko="각 프로젝트에서 기획부터 분석, 개발, 그리고 현업 설득까지 End-to-End로 주도했습니다." data-en="Led each project end-to-end — from planning and analysis to development and stakeholder buy-in.">
         각 프로젝트에서 기획부터 분석, 개발, 그리고 현업 설득까지 End-to-End로 주도했습니다.
       </p>
     </div>
@@ -176,40 +216,40 @@
       <!-- Project 1 -->
       <div class="project-card">
         <div class="project-card-icon blue">📊</div>
-        <h3 class="project-card-title">400명 인력 효율화</h3>
+        <h3 class="project-card-title" data-ko="400명 인력 효율화" data-en="400-Person Workforce Optimization">400명 인력 효율화</h3>
         <span class="project-card-period">2022 — 2024</span>
-        <p class="project-card-desc">
+        <p class="project-card-desc" data-ko="현장 관리자의 '직감'에 의존하던 인력 배치 관행을 깨고, 물동·Capa·설비대수 등 조작 불가능한 데이터 기반의 필요 인원 산출 Logic을 수립. 시나리오별 시뮬레이션을 통해 최적 Case를 도출하고, 정량적 시각화로 현업을 설득하여 기능직 30%(400명) 효율화를 달성했습니다." data-en="Broke the convention of relying on managers' 'gut feeling' for workforce allocation. Established headcount calculation logic based on tamper-proof data (volume, capacity, equipment count). Derived optimal scenarios through simulation and persuaded stakeholders with quantitative visualization, achieving 30% (400 operators) workforce optimization.">
           현장 관리자의 '직감'에 의존하던 인력 배치 관행을 깨고, 물동·Capa·설비대수 등
           조작 불가능한 데이터 기반의 필요 인원 산출 Logic을 수립.
           시나리오별 시뮬레이션을 통해 최적 Case를 도출하고, 정량적 시각화로 현업을 설득하여
           기능직 30%(400명) 효율화를 달성했습니다.
         </p>
         <div class="project-card-metrics">
-          <span class="metric-badge highlight">400명 효율화</span>
-          <span class="metric-badge">기능직 30% 절감</span>
-          <span class="metric-badge">임원 의사결정 지원</span>
+          <span class="metric-badge highlight" data-ko="400명 효율화" data-en="400 Optimized">400명 효율화</span>
+          <span class="metric-badge" data-ko="기능직 30% 절감" data-en="30% Workforce Reduction">기능직 30% 절감</span>
+          <span class="metric-badge" data-ko="임원 의사결정 지원" data-en="Executive Decision Support">임원 의사결정 지원</span>
         </div>
         <div class="project-card-tags">
-          <span class="tag">현업 설득</span>
-          <span class="tag">데이터 시각화</span>
+          <span class="tag" data-ko="현업 설득" data-en="Stakeholder Buy-in">현업 설득</span>
+          <span class="tag" data-ko="데이터 시각화" data-en="Data Visualization">데이터 시각화</span>
         </div>
       </div>
 
       <!-- Project 2 -->
       <div class="project-card">
         <div class="project-card-icon cyan">🔬</div>
-        <h3 class="project-card-title">수율 개선 알고리즘</h3>
+        <h3 class="project-card-title" data-ko="수율 개선 알고리즘" data-en="Yield Improvement Algorithm">수율 개선 알고리즘</h3>
         <span class="project-card-period">2025</span>
-        <p class="project-card-desc">
+        <p class="project-card-desc" data-ko="설비 FDC·CTQ·불량 이력 데이터를 추출하고, <strong>변화점 탐지(CPD) 알고리즘을 독자 개발</strong>하여 설비 파라미터의 최적 관리선을 도출. Binning·시계열·불량 Map의 3단 시각화로 현업의 즉각적 이해와 신뢰를 이끌어냈습니다. 특히 CTQ 최적 관리선 도출은 AX 협업 우수 사례로 선정되어 CEO께 BP사례로 보고되었습니다." data-en="Extracted equipment FDC, CTQ, and defect history data, then <strong>independently developed a Change Point Detection (CPD) algorithm</strong> to derive optimal control limits for equipment parameters. Built a 3-tier visualization (Binning, time-series, defect map) that earned instant understanding and trust from stakeholders. The CTQ optimal control limit derivation was selected as an AX collaboration best practice and reported to the CEO." data-i18n-mode="html">
           설비 FDC·CTQ·불량 이력 데이터를 추출하고, <strong>변화점 탐지(CPD) 알고리즘을 독자 개발</strong>하여
           설비 파라미터의 최적 관리선을 도출. Binning·시계열·불량 Map의 3단 시각화로 현업의
           즉각적 이해와 신뢰를 이끌어냈습니다. 특히 CTQ 최적 관리선 도출은 AX 협업 우수 사례로
           선정되어 CEO께 BP사례로 보고되었습니다.
         </p>
         <div class="project-card-metrics">
-          <span class="metric-badge highlight">수율 0.13%p↑</span>
-          <span class="metric-badge">CEO 보고</span>
-          <span class="metric-badge">AX 우수사례</span>
+          <span class="metric-badge highlight" data-ko="수율 0.13%p↑" data-en="Yield +0.13%p">수율 0.13%p↑</span>
+          <span class="metric-badge" data-ko="CEO 보고" data-en="CEO Report">CEO 보고</span>
+          <span class="metric-badge" data-ko="AX 우수사례" data-en="AX Best Practice">AX 우수사례</span>
         </div>
         <div class="project-card-tags">
           <span class="tag">Python</span>
@@ -222,33 +262,33 @@
       <!-- Project 3 -->
       <div class="project-card">
         <div class="project-card-icon purple">🧠</div>
-        <h3 class="project-card-title">조직 심리 동인 분석</h3>
+        <h3 class="project-card-title" data-ko="조직 심리 동인 분석" data-en="Organizational Psychology Analysis">조직 심리 동인 분석</h3>
         <span class="project-card-period">2024</span>
-        <p class="project-card-desc">
+        <p class="project-card-desc" data-ko="&quot;인사이동 예정 직원은 조직 문화 설문에 부정적인가?&quot;라는 가설을 스스로 수립하고, 대규모 인사이동 시점에 맞춰 설문 배포 방식을 교묘하게 설계하여 이탈/잔류 여부와 답변 간의 유의미한 상관관계를 발견. 경영진에게 선제적 인사이트를 보고하며 놀라운 반응을 이끌어냈습니다." data-en="Self-initiated the hypothesis: 'Do employees scheduled for transfer respond negatively to culture surveys?' Cleverly designed survey distribution timing around large-scale transfers and discovered significant correlations between transfer/retention status and responses. Proactively reported insights to management, eliciting an impressed response.">
           "인사이동 예정 직원은 조직 문화 설문에 부정적인가?"라는 가설을 스스로 수립하고,
           대규모 인사이동 시점에 맞춰 설문 배포 방식을 교묘하게 설계하여
           이탈/잔류 여부와 답변 간의 유의미한 상관관계를 발견.
           경영진에게 선제적 인사이트를 보고하며 놀라운 반응을 이끌어냈습니다.
         </p>
         <div class="project-card-metrics">
-          <span class="metric-badge highlight">자발적 기획</span>
-          <span class="metric-badge">임원진 보고</span>
-          <span class="metric-badge">인사이트</span>
+          <span class="metric-badge highlight" data-ko="자발적 기획" data-en="Self-Initiated">자발적 기획</span>
+          <span class="metric-badge" data-ko="임원진 보고" data-en="Exec Report">임원진 보고</span>
+          <span class="metric-badge" data-ko="인사이트" data-en="Insight">인사이트</span>
         </div>
         <div class="project-card-tags">
           <span class="tag">HR Analytics</span>
-          <span class="tag">설문 설계</span>
-          <span class="tag">상관분석</span>
-          <span class="tag">데이터 비식별화</span>
+          <span class="tag" data-ko="설문 설계" data-en="Survey Design">설문 설계</span>
+          <span class="tag" data-ko="상관분석" data-en="Correlation Analysis">상관분석</span>
+          <span class="tag" data-ko="데이터 비식별화" data-en="Data Anonymization">데이터 비식별화</span>
         </div>
       </div>
 
       <!-- Project 4 — 기준정보 수립 -->
       <div class="project-card">
         <div class="project-card-icon cyan">🏭</div>
-        <h3 class="project-card-title">공정 설비 기준정보 수립</h3>
+        <h3 class="project-card-title" data-ko="공정 설비 기준정보 수립" data-en="Process Equipment Master Data">공정 설비 기준정보 수립</h3>
         <span class="project-card-period">2026</span>
-        <p class="project-card-desc">
+        <p class="project-card-desc" data-ko="설비 ID만으로는 알 수 없는 정보(예: Buffer 대기 Slot 번호)에 대해 <strong>9개 공장 × 20개 공정(세부 수백 개)</strong>의 기준정보를 체계적으로 수립. 자동분석 알고리즘에 탑재하여 <strong>불량분석 시간을 획기적으로 단축</strong>했습니다. (Garbage In, Garbage Out 방지)<br><br>Photo 공정뿐 아니라 전 공정에 대한 <strong>얕고 넓은 도메인 지식</strong>이 있었기에 가능했고, 기획 경험을 살려 현업을 설득했습니다 — &quot;이 기준정보를 잘 정리해주면 Spotfire에서 자동분석 기능을 바로 쓸 수 있다.&quot; 또한 <strong>데이터 구조를 이해</strong>하고 있어, 알고리즘에 어떤 형태로 데이터를 넣어야 하는지를 직접 구상할 수 있었습니다." data-en="Systematically established master data for information that equipment IDs alone cannot provide (e.g., buffer slot numbers) across <strong>9 factories × 20 processes (hundreds of sub-items)</strong>. Integrated into automated analysis algorithms to <strong>dramatically reduce defect analysis time</strong>. (Preventing Garbage In, Garbage Out)<br><br>This was possible due to <strong>broad, cross-process domain knowledge</strong> beyond just Photo processes, and planning experience was leveraged to persuade stakeholders — 'If you organize this master data well, you can use the auto-analysis feature in Spotfire right away.' Also, <strong>understanding data structures</strong> enabled direct design of how data should be fed into the algorithm." data-i18n-mode="html">
           설비 ID만으로는 알 수 없는 정보(예: Buffer 대기 Slot 번호)에 대해
           <strong>9개 공장 × 20개 공정(세부 수백 개)</strong>의 기준정보를 체계적으로 수립.
           자동분석 알고리즘에 탑재하여 <strong>불량분석 시간을 획기적으로 단축</strong>했습니다.
@@ -258,42 +298,42 @@
           또한 <strong>데이터 구조를 이해</strong>하고 있어, 알고리즘에 어떤 형태로 데이터를 넣어야 하는지를 직접 구상할 수 있었습니다.
         </p>
         <div class="project-card-metrics">
-          <span class="metric-badge highlight">9개 공장</span>
-          <span class="metric-badge">GIGO 방지</span>
-          <span class="metric-badge">분석시간 단축</span>
+          <span class="metric-badge highlight" data-ko="9개 공장" data-en="9 Factories">9개 공장</span>
+          <span class="metric-badge" data-ko="GIGO 방지" data-en="GIGO Prevention">GIGO 방지</span>
+          <span class="metric-badge" data-ko="분석시간 단축" data-en="Faster Analysis">분석시간 단축</span>
         </div>
         <div class="project-card-tags">
-          <span class="tag">도메인 지식</span>
-          <span class="tag">데이터 정제</span>
-          <span class="tag">기준정보</span>
-          <span class="tag">현업 협업</span>
+          <span class="tag" data-ko="도메인 지식" data-en="Domain Knowledge">도메인 지식</span>
+          <span class="tag" data-ko="데이터 정제" data-en="Data Cleansing">데이터 정제</span>
+          <span class="tag" data-ko="기준정보" data-en="Master Data">기준정보</span>
+          <span class="tag" data-ko="현업 협업" data-en="Cross-functional">현업 협업</span>
         </div>
       </div>
 
       <!-- Project 5 — Y+3 특별 강조 -->
       <div class="project-card project-card-featured">
         <div class="project-card-icon green">🚀</div>
-        <h3 class="project-card-title">궁극의 불량분석 Agent 개발</h3>
-        <span class="project-card-period">2026 — 현재 · <strong style="color: var(--accent-success);">초대형 PJT</strong></span>
-        <p class="project-card-desc">
+        <h3 class="project-card-title" data-ko="궁극의 불량분석 Agent 개발" data-en="Ultimate Defect Analysis Agent">궁극의 불량분석 Agent 개발</h3>
+        <span class="project-card-period" data-ko="2026 — 현재 · <strong style='color: var(--accent-success);'>초대형 PJT</strong>" data-en="2026 — Present · <strong style='color: var(--accent-success);'>Mega PJT</strong>" data-i18n-mode="html">2026 — 현재 · <strong style="color: var(--accent-success);">초대형 PJT</strong></span>
+        <p class="project-card-desc" data-ko="팀원들이 개발한 여러 분석 Tool을 종합하여 현업에 배포할 Tool을 만들었습니다. 백엔드 서버에서 데이터분석, 프론트엔드 Spotfire에서 시각화를 구현한 대단위 프로젝트이며, 여기까지는 단순히 개발자로 참여하였습니다.<br><br><strong>중요한건 제가 이후 Y+3에 대한 계획을 수립하고 팀원들에게 비전을 제시하였다는 겁니다.</strong> 임원진 보고를 통해 초대형 프로젝트로 확대하고 리소스를 투자받을 계획입니다." data-en="Consolidated multiple analysis tools developed by team members into a deployable tool for the field. A large-scale project with backend data analysis and Spotfire frontend visualization — up to this point, I participated simply as a developer.<br><br><strong>What matters is that I then established the Y+3 roadmap and presented a vision to the team.</strong> The plan is to scale it into a mega project through executive reporting and secure resource investment." data-i18n-mode="html">
           팀원들이 개발한 여러 분석 Tool을 종합하여 현업에 배포할 Tool을 만들었습니다.
           백엔드 서버에서 데이터분석, 프론트엔드 Spotfire에서 시각화를 구현한 대단위 프로젝트이며,
           여기까지는 단순히 개발자로 참여하였습니다.<br><br>
           <strong>중요한건 제가 이후 Y+3에 대한 계획을 수립하고 팀원들에게 비전을 제시하였다는 겁니다.</strong>
           임원진 보고를 통해 초대형 프로젝트로 확대하고 리소스를 투자받을 계획입니다.
         </p>
-        <p style="font-size: var(--text-xs); color: var(--text-muted); margin-bottom: var(--space-sm);">도메인지식 챗봇 → 엔지니어의 워크플로우 학습 → 분석방법론 개발 Agent</p>
+        <p style="font-size: var(--text-xs); color: var(--text-muted); margin-bottom: var(--space-sm);" data-ko="도메인지식 챗봇 → 엔지니어의 워크플로우 학습 → 분석방법론 개발 Agent" data-en="Domain knowledge chatbot → Engineer workflow learning → Analysis methodology development Agent">도메인지식 챗봇 → 엔지니어의 워크플로우 학습 → 분석방법론 개발 Agent</p>
         <div class="project-card-metrics">
           <span class="metric-badge highlight">E2E Pipeline</span>
-          <span class="metric-badge">Y+3 개발기획</span>
+          <span class="metric-badge" data-ko="Y+3 개발기획" data-en="Y+3 Dev Planning">Y+3 개발기획</span>
         </div>
         <div class="project-card-tags">
           <span class="tag">LLM</span>
           <span class="tag">RAG</span>
           <span class="tag">FastAPI</span>
           <span class="tag">Spotfire</span>
-          <span class="tag">개발기획</span>
-          <span class="tag">임원보고</span>
+          <span class="tag" data-ko="개발기획" data-en="Dev Planning">개발기획</span>
+          <span class="tag" data-ko="임원보고" data-en="Exec Report">임원보고</span>
         </div>
       </div>
     </div>
@@ -304,8 +344,8 @@
   <section class="section" id="skills">
     <div class="reveal">
       <span class="section-label"><span class="dot"></span> Tech Stack</span>
-      <h2 class="section-title">기술 스택</h2>
-      <p class="section-subtitle">
+      <h2 class="section-title" data-ko="기술 스택" data-en="Tech Stack">기술 스택</h2>
+      <p class="section-subtitle" data-ko="프로그래밍과 데이터 분석을 독학으로 마스터하여 직무 전환을 이뤄냈습니다." data-en="Self-taught programming and data analysis to achieve a successful career transition.">
         프로그래밍과 데이터 분석을 독학으로 마스터하여 직무 전환을 이뤄냈습니다.
       </p>
     </div>
@@ -313,7 +353,7 @@
     <div class="skills-grid" style="margin-top: 2.5rem;">
       <!-- Data & Analytics -->
       <div class="skill-category">
-        <h3 class="skill-category-title">📊 데이터 분석 & 시각화</h3>
+        <h3 class="skill-category-title" data-ko="📊 데이터 분석 &amp; 시각화" data-en="📊 Data Analysis &amp; Visualization" data-i18n-mode="html">📊 데이터 분석 & 시각화</h3>
         <div class="skill-list">
           <div class="skill-item">
             <span class="skill-name">Python (Pandas, NumPy) <span>80%</span></span>
@@ -323,7 +363,10 @@
             <span class="skill-name">SQL (DynamoDB) <span>50%</span></span>
             <div class="skill-bar-bg"><div class="skill-bar" data-width="50"></div></div>
           </div>
-
+          <div class="skill-item">
+            <span class="skill-name" data-ko="데이터 시각화 (Matplotlib, Plotly) <span>50%</span>" data-en="Data Visualization (Matplotlib, Plotly) <span>50%</span>" data-i18n-mode="html">데이터 시각화 (Matplotlib, Plotly) <span>50%</span></span>
+            <div class="skill-bar-bg"><div class="skill-bar" data-width="50"></div></div>
+          </div>
           <div class="skill-item">
             <span class="skill-name">Excel / PPT <span>90%</span></span>
             <div class="skill-bar-bg"><div class="skill-bar" data-width="90"></div></div>
@@ -333,7 +376,7 @@
 
       <!-- AI / ML -->
       <div class="skill-category">
-        <h3 class="skill-category-title">🤖 AI & 머신러닝</h3>
+        <h3 class="skill-category-title" data-ko="🤖 AI &amp; 머신러닝" data-en="🤖 AI &amp; Machine Learning" data-i18n-mode="html">🤖 AI & 머신러닝</h3>
         <div class="skill-list">
           <div class="skill-item">
             <span class="skill-name">LLM / Multi-Agent System <span>95%</span></span>
@@ -352,22 +395,22 @@
 
       <!-- Manufacturing Domain -->
       <div class="skill-category">
-        <h3 class="skill-category-title">🏭 제조 도메인</h3>
+        <h3 class="skill-category-title" data-ko="🏭 제조 도메인" data-en="🏭 Manufacturing Domain">🏭 제조 도메인</h3>
         <div class="skill-list">
           <div class="skill-item">
-            <span class="skill-name">스마트팩토리 / MES <span>80%</span></span>
+            <span class="skill-name" data-ko="스마트팩토리 / MES <span>80%</span>" data-en="Smart Factory / MES <span>80%</span>" data-i18n-mode="html">스마트팩토리 / MES <span>80%</span></span>
             <div class="skill-bar-bg"><div class="skill-bar" data-width="80"></div></div>
           </div>
           <div class="skill-item">
-            <span class="skill-name">FDC / CTQ 공정 관리 <span>90%</span></span>
+            <span class="skill-name" data-ko="FDC / CTQ 공정 관리 <span>90%</span>" data-en="FDC / CTQ Process Control <span>90%</span>" data-i18n-mode="html">FDC / CTQ 공정 관리 <span>90%</span></span>
             <div class="skill-bar-bg"><div class="skill-bar" data-width="90"></div></div>
           </div>
           <div class="skill-item">
-            <span class="skill-name">KPI 기획 / 인력 운영 <span>95%</span></span>
+            <span class="skill-name" data-ko="KPI 기획 / 인력 운영 <span>95%</span>" data-en="KPI Planning / Workforce Mgmt <span>95%</span>" data-i18n-mode="html">KPI 기획 / 인력 운영 <span>95%</span></span>
             <div class="skill-bar-bg"><div class="skill-bar" data-width="95"></div></div>
           </div>
           <div class="skill-item">
-            <span class="skill-name">재무 / 경영성과 <span>80%</span></span>
+            <span class="skill-name" data-ko="재무 / 경영성과 <span>80%</span>" data-en="Finance / Business Performance <span>80%</span>" data-i18n-mode="html">재무 / 경영성과 <span>80%</span></span>
             <div class="skill-bar-bg"><div class="skill-bar" data-width="80"></div></div>
           </div>
         </div>
@@ -375,14 +418,14 @@
 
       <!-- Tools -->
       <div class="skill-category">
-        <h3 class="skill-category-title">🛠️ 도구 & 플랫폼</h3>
+        <h3 class="skill-category-title" data-ko="🛠️ 도구 &amp; 플랫폼" data-en="🛠️ Tools &amp; Platforms" data-i18n-mode="html">🛠️ 도구 & 플랫폼</h3>
         <div class="skill-list">
           <div class="skill-item">
             <span class="skill-name">AI Tools (Antigravity, Codex ...) <span>95%</span></span>
             <div class="skill-bar-bg"><div class="skill-bar" data-width="95"></div></div>
           </div>
           <div class="skill-item">
-            <span class="skill-name">AI 활용 / 융합 <span>90%</span></span>
+            <span class="skill-name" data-ko="AI 활용 / 융합 <span>90%</span>" data-en="AI Utilization / Integration <span>90%</span>" data-i18n-mode="html">AI 활용 / 융합 <span>90%</span></span>
             <div class="skill-bar-bg"><div class="skill-bar" data-width="90"></div></div>
           </div>
           <div class="skill-item">
@@ -390,7 +433,7 @@
             <div class="skill-bar-bg"><div class="skill-bar" data-width="50"></div></div>
           </div>
           <div class="skill-item">
-            <span class="skill-name">PPT 보고서 / 스토리텔링 <span>90%</span></span>
+            <span class="skill-name" data-ko="PPT 보고서 / 스토리텔링 <span>90%</span>" data-en="PPT Reports / Storytelling <span>90%</span>" data-i18n-mode="html">PPT 보고서 / 스토리텔링 <span>90%</span></span>
             <div class="skill-bar-bg"><div class="skill-bar" data-width="90"></div></div>
           </div>
         </div>
@@ -402,8 +445,8 @@
   <section class="section" id="automation">
     <div class="reveal">
       <span class="section-label"><span class="dot"></span> AI Automation</span>
-      <h2 class="section-title">AI 자동화 프로젝트</h2>
-      <p class="section-subtitle">
+      <h2 class="section-title" data-ko="AI 자동화 프로젝트" data-en="AI Automation Projects">AI 자동화 프로젝트</h2>
+      <p class="section-subtitle" data-ko="LLM API를 활용한 Multi-Agent 시스템 설계 및 실무 자동화." data-en="Multi-Agent system design and workflow automation using LLM APIs.">
         LLM API를 활용한 Multi-Agent 시스템 설계 및 실무 자동화.
       </p>
     </div>
@@ -413,8 +456,8 @@
       <div class="automation-header">
         <div class="automation-icon">🤖</div>
         <div>
-          <h3 class="automation-title">Multi-Agent 워크플로우 자동화</h3>
-          <p class="automation-subtitle">
+          <h3 class="automation-title" data-ko="Multi-Agent 워크플로우 자동화" data-en="Multi-Agent Workflow Automation">Multi-Agent 워크플로우 자동화</h3>
+          <p class="automation-subtitle" data-ko="LLM API를 활용하여 <strong>다중 에이전트(작성, 3각 평가, 레드팀) 및 Human-in-the-loop 구조</strong>를 갖춘 자동화 워크플로우를 설계하고 구현했습니다. AI가 초안을 작성하고, 여러 평가 에이전트가 다각도로 검증하며, 인간이 최종 피드백을 제공하는 파이프라인입니다." data-en="Designed and implemented an automated workflow with <strong>multi-agent (drafting, 3-way evaluation, red team) and Human-in-the-loop architecture</strong> using LLM APIs. A pipeline where AI drafts, multiple evaluation agents verify from different angles, and humans provide final feedback." data-i18n-mode="html">
             LLM API를 활용하여 <strong>다중 에이전트(작성, 3각 평가, 레드팀) 및
             Human-in-the-loop 구조</strong>를 갖춘 자동화 워크플로우를 설계하고 구현했습니다.
             AI가 초안을 작성하고, 여러 평가 에이전트가 다각도로 검증하며,
@@ -427,41 +470,41 @@
       <div class="pipeline-flow">
         <div class="pipeline-step">
           <span class="pipeline-step-icon">📝</span>
-          <span class="pipeline-step-label">초안 생성<br><small>Draft Agent</small></span>
+          <span class="pipeline-step-label" data-ko="초안 생성<br><small>Draft Agent</small>" data-en="Draft<br><small>Draft Agent</small>" data-i18n-mode="html">초안 생성<br><small>Draft Agent</small></span>
         </div>
         <span class="pipeline-arrow">→</span>
         <div class="pipeline-step">
           <span class="pipeline-step-icon">🔍</span>
-          <span class="pipeline-step-label">3각 평가<br><small>인사/팀장/임원</small></span>
+          <span class="pipeline-step-label" data-ko="3각 평가<br><small>인사/팀장/임원</small>" data-en="3-Way Eval<br><small>HR/Manager/Exec</small>" data-i18n-mode="html">3각 평가<br><small>인사/팀장/임원</small></span>
         </div>
         <span class="pipeline-arrow">→</span>
         <div class="pipeline-step">
           <span class="pipeline-step-icon">🛡️</span>
-          <span class="pipeline-step-label">레드팀 검증<br><small>Red Team</small></span>
+          <span class="pipeline-step-label" data-ko="레드팀 검증<br><small>Red Team</small>" data-en="Red Team<br><small>Red Team</small>" data-i18n-mode="html">레드팀 검증<br><small>Red Team</small></span>
         </div>
         <span class="pipeline-arrow">→</span>
         <div class="pipeline-step">
           <span class="pipeline-step-icon">👤</span>
-          <span class="pipeline-step-label">인간 보완<br><small>Human-in-loop</small></span>
+          <span class="pipeline-step-label" data-ko="인간 보완<br><small>Human-in-loop</small>" data-en="Human Review<br><small>Human-in-loop</small>" data-i18n-mode="html">인간 보완<br><small>Human-in-loop</small></span>
         </div>
         <span class="pipeline-arrow">→</span>
         <div class="pipeline-step">
           <span class="pipeline-step-icon">✅</span>
-          <span class="pipeline-step-label">최종 산출물<br><small>Final Output</small></span>
+          <span class="pipeline-step-label" data-ko="최종 산출물<br><small>Final Output</small>" data-en="Final Output<br><small>Final Output</small>" data-i18n-mode="html">최종 산출물<br><small>Final Output</small></span>
         </div>
       </div>
 
       <div class="automation-features">
         <div class="auto-feature">
           <h4 class="auto-feature-title">🎯 Multi-Agent Architecture</h4>
-          <p class="auto-feature-desc">
+          <p class="auto-feature-desc" data-ko="역할별 전문 에이전트(작성, 평가, 도메인 첨가)가 협업하는 구조로, 단일 LLM 대비 출력 품질과 다각적 검증을 동시에 확보합니다." data-en="A structure where role-specific agents (drafting, evaluation, domain augmentation) collaborate, achieving both higher output quality and multi-angle verification compared to a single LLM.">
             역할별 전문 에이전트(작성, 평가, 도메인 첨가)가 협업하는 구조로,
             단일 LLM 대비 출력 품질과 다각적 검증을 동시에 확보합니다.
           </p>
         </div>
         <div class="auto-feature">
           <h4 class="auto-feature-title">🔄 Human-in-the-Loop</h4>
-          <p class="auto-feature-desc">
+          <p class="auto-feature-desc" data-ko="AI의 자동 출력에 인간의 판단을 결합하여, 도메인 지식과 맥락적 뉘앙스를 최종 산출물에 반영하는 피드백 루프를 구축했습니다." data-en="Built a feedback loop that combines human judgment with AI's automated output, reflecting domain knowledge and contextual nuances in the final deliverable.">
             AI의 자동 출력에 인간의 판단을 결합하여, 도메인 지식과 맥락적 뉘앙스를
             최종 산출물에 반영하는 피드백 루프를 구축했습니다.
           </p>
@@ -474,8 +517,8 @@
       <div class="automation-header">
         <div class="automation-icon">🎬</div>
         <div>
-          <h3 class="automation-title">콘텐츠 자동 생성 파이프라인</h3>
-          <p class="automation-subtitle">
+          <h3 class="automation-title" data-ko="콘텐츠 자동 생성 파이프라인" data-en="Automated Content Generation Pipeline">콘텐츠 자동 생성 파이프라인</h3>
+          <p class="automation-subtitle" data-ko="주제 기획부터 최종 영상 산출까지 <strong>End-to-End 콘텐츠 제작 파이프라인</strong>을 구축했습니다. 반복적인 제작 과정을 자동화하여 제작 시간을 획기적으로 단축합니다." data-en="Built an <strong>End-to-End content production pipeline</strong> from topic planning to final video output. Automated repetitive production processes to dramatically reduce production time." data-i18n-mode="html">
             주제 기획부터 최종 영상 산출까지 <strong>End-to-End 콘텐츠 제작 파이프라인</strong>을 구축했습니다.
             반복적인 제작 과정을 자동화하여 제작 시간을 획기적으로 단축합니다.
           </p>
@@ -485,41 +528,41 @@
       <div class="pipeline-flow">
         <div class="pipeline-step">
           <span class="pipeline-step-icon">💡</span>
-          <span class="pipeline-step-label">주제 기획<br><small>Topic Agent</small></span>
+          <span class="pipeline-step-label" data-ko="주제 기획<br><small>Topic Agent</small>" data-en="Topic Planning<br><small>Topic Agent</small>" data-i18n-mode="html">주제 기획<br><small>Topic Agent</small></span>
         </div>
         <span class="pipeline-arrow">→</span>
         <div class="pipeline-step">
           <span class="pipeline-step-icon">📄</span>
-          <span class="pipeline-step-label">대본 생성<br><small>Script Agent</small></span>
+          <span class="pipeline-step-label" data-ko="대본 생성<br><small>Script Agent</small>" data-en="Script Generation<br><small>Script Agent</small>" data-i18n-mode="html">대본 생성<br><small>Script Agent</small></span>
         </div>
         <span class="pipeline-arrow">→</span>
         <div class="pipeline-step">
           <span class="pipeline-step-icon">🎥</span>
-          <span class="pipeline-step-label">영상 제작<br><small>Video Gen</small></span>
+          <span class="pipeline-step-label" data-ko="영상 제작<br><small>Video Gen</small>" data-en="Video Production<br><small>Video Gen</small>" data-i18n-mode="html">영상 제작<br><small>Video Gen</small></span>
         </div>
         <span class="pipeline-arrow">→</span>
         <div class="pipeline-step">
           <span class="pipeline-step-icon">📝</span>
-          <span class="pipeline-step-label">자막 생성<br><small>Subtitle</small></span>
+          <span class="pipeline-step-label" data-ko="자막 생성<br><small>Subtitle</small>" data-en="Subtitles<br><small>Subtitle</small>" data-i18n-mode="html">자막 생성<br><small>Subtitle</small></span>
         </div>
         <span class="pipeline-arrow">→</span>
         <div class="pipeline-step">
           <span class="pipeline-step-icon">🚀</span>
-          <span class="pipeline-step-label">최종 업로드<br><small>Publish</small></span>
+          <span class="pipeline-step-label" data-ko="최종 업로드<br><small>Publish</small>" data-en="Final Upload<br><small>Publish</small>" data-i18n-mode="html">최종 업로드<br><small>Publish</small></span>
         </div>
       </div>
 
       <div class="automation-features">
         <div class="auto-feature">
-          <h4 class="auto-feature-title">⚡ 완전 자동화</h4>
-          <p class="auto-feature-desc">
+          <h4 class="auto-feature-title" data-ko="⚡ 완전 자동화" data-en="⚡ Full Automation">⚡ 완전 자동화</h4>
+          <p class="auto-feature-desc" data-ko="주제만 입력하면 대본, 영상, 자막, 업로드까지 사람 개입 없이 처리되는 진정한 End-to-End 자동화 파이프라인입니다." data-en="A true End-to-End automation pipeline where just entering a topic triggers script, video, subtitle generation, and upload — all without human intervention.">
             주제만 입력하면 대본, 영상, 자막, 업로드까지 사람 개입 없이 처리되는
             진정한 End-to-End 자동화 파이프라인입니다.
           </p>
         </div>
         <div class="auto-feature">
-          <h4 class="auto-feature-title">🔁 반복 생산 구조</h4>
-          <p class="auto-feature-desc">
+          <h4 class="auto-feature-title" data-ko="🔁 반복 생산 구조" data-en="🔁 Scalable Production">🔁 반복 생산 구조</h4>
+          <p class="auto-feature-desc" data-ko="한 번 구축된 파이프라인으로 콘텐츠를 대량 생산할 수 있어, 제작 비용 대비 산출량을 극적으로 높였습니다." data-en="Once the pipeline is built, content can be mass-produced, dramatically increasing output relative to production costs.">
             한 번 구축된 파이프라인으로 콘텐츠를 대량 생산할 수 있어,
             제작 비용 대비 산출량을 극적으로 높였습니다.
           </p>
@@ -532,8 +575,8 @@
       <div class="automation-header">
         <div class="automation-icon">🏫</div>
         <div>
-          <h3 class="automation-title">HaGoTools — 직군별 AI 업무 자동화 웹 서비스 <a href="https://hagotools.com" target="_blank" style="display: inline-flex; align-items: center; gap: 4px; font-size: 0.55em; background: rgba(59,130,246,0.15); color: #60a5fa; padding: 4px 10px; border-radius: 20px; text-decoration: none; font-weight: 500; vertical-align: middle; transition: all 0.2s;" onmouseover="this.style.background='rgba(59,130,246,0.3)'" onmouseout="this.style.background='rgba(59,130,246,0.15)'">🌐 사이트 방문 ↗</a></h3>
-          <p class="automation-subtitle">
+          <h3 class="automation-title" data-ko="HaGoTools — 직군별 AI 업무 자동화 웹 서비스" data-en="HaGoTools — AI Workflow Automation Web Service" data-i18n-mode="partial"> <a href="https://hagotools.com" target="_blank" style="display: inline-flex; align-items: center; gap: 4px; font-size: 0.55em; background: rgba(59,130,246,0.15); color: #60a5fa; padding: 4px 10px; border-radius: 20px; text-decoration: none; font-weight: 500; vertical-align: middle; transition: all 0.2s;" onmouseover="this.style.background='rgba(59,130,246,0.3)'" onmouseout="this.style.background='rgba(59,130,246,0.15)'" data-ko="🌐 사이트 방문 ↗" data-en="🌐 Visit Site ↗">🌐 사이트 방문 ↗</a></h3>
+          <p class="automation-subtitle" data-ko="<strong>&quot;게으름을 위한 스마트함&quot;</strong> — 특정 직군이 매일 반복하는 업무를 AI로 줄여주는 서비스를 기획부터 배포까지 단독으로 완성했습니다. 현재 <strong>어린이집 교사 포털</strong>이 운영 중입니다." data-en="<strong>&quot;Smart for the lazy&quot;</strong> — Solo-built a service that reduces daily repetitive tasks for specific job roles using AI, from planning to deployment. Currently operating a <strong>daycare teacher portal</strong>." data-i18n-mode="html">
             <strong>"게으름을 위한 스마트함"</strong> — 특정 직군이 매일 반복하는 업무를 AI로 줄여주는 서비스를
             기획부터 배포까지 단독으로 완성했습니다. 현재 <strong>어린이집 교사 포털</strong>이 운영 중입니다.
           </p>
@@ -543,43 +586,43 @@
       <div class="pipeline-flow">
         <div class="pipeline-step">
           <span class="pipeline-step-icon">📋</span>
-          <span class="pipeline-step-label">보육일지<br><small>AI 자동 작성</small></span>
+          <span class="pipeline-step-label" data-ko="보육일지<br><small>AI 자동 작성</small>" data-en="Care Diary<br><small>AI Auto-Write</small>" data-i18n-mode="html">보육일지<br><small>AI 자동 작성</small></span>
         </div>
         <span class="pipeline-arrow">→</span>
         <div class="pipeline-step">
           <span class="pipeline-step-icon">🖼️</span>
-          <span class="pipeline-step-label">이미지 변환<br><small>자르기/합치기</small></span>
+          <span class="pipeline-step-label" data-ko="이미지 변환<br><small>자르기/합치기</small>" data-en="Image Convert<br><small>Crop/Merge</small>" data-i18n-mode="html">이미지 변환<br><small>자르기/합치기</small></span>
         </div>
         <span class="pipeline-arrow">→</span>
         <div class="pipeline-step">
           <span class="pipeline-step-icon">🔍</span>
-          <span class="pipeline-step-label">업무기준 검색<br><small>RAG 기반</small></span>
+          <span class="pipeline-step-label" data-ko="업무기준 검색<br><small>RAG 기반</small>" data-en="Work Standards<br><small>RAG-based</small>" data-i18n-mode="html">업무기준 검색<br><small>RAG 기반</small></span>
         </div>
         <span class="pipeline-arrow">→</span>
         <div class="pipeline-step">
           <span class="pipeline-step-icon">📊</span>
-          <span class="pipeline-step-label">실사용 집계<br><small>Redis 분석</small></span>
+          <span class="pipeline-step-label" data-ko="실사용 집계<br><small>Redis 분석</small>" data-en="Usage Analytics<br><small>Redis Analysis</small>" data-i18n-mode="html">실사용 집계<br><small>Redis 분석</small></span>
         </div>
       </div>
 
       <div class="automation-features">
         <div class="auto-feature">
-          <h4 class="auto-feature-title">🧠 AI 보육일지 작성기</h4>
-          <p class="auto-feature-desc">
+          <h4 class="auto-feature-title" data-ko="🧠 AI 보육일지 작성기" data-en="🧠 AI Care Diary Writer">🧠 AI 보육일지 작성기</h4>
+          <p class="auto-feature-desc" data-ko="키워드/체크리스트 입력 → Gemini AI가 보건복지부 평가인증 기준에 맞는 보육일지 자동 생성. 자연어 수정 채팅 + 원클릭 편집 버튼 + 음성 입력 지원." data-en="Keyword/checklist input → Gemini AI auto-generates care diaries meeting Ministry of Health accreditation standards. Natural language editing chat + one-click edit buttons + voice input support.">
             키워드/체크리스트 입력 → Gemini AI가 보건복지부 평가인증 기준에 맞는 보육일지 자동 생성.
             자연어 수정 채팅 + 원클릭 편집 버튼 + 음성 입력 지원.
           </p>
         </div>
         <div class="auto-feature">
-          <h4 class="auto-feature-title">📂 업무기준 AI 검색 (RAG)</h4>
-          <p class="auto-feature-desc">
+          <h4 class="auto-feature-title" data-ko="📂 업무기준 AI 검색 (RAG)" data-en="📂 Work Standards AI Search (RAG)">📂 업무기준 AI 검색 (RAG)</h4>
+          <p class="auto-feature-desc" data-ko="2026 보육사업안내 등 정부 공식 문서를 기반으로 자연어 질문에 출처 포함 답변. 단순 키워드 검색이 아닌 문서 기반 RAG 방식으로 신뢰도 확보." data-en="Answers natural language questions with source citations based on official government documents such as the 2026 Childcare Business Guide. Ensures reliability through document-based RAG rather than simple keyword search.">
             2026 보육사업안내 등 정부 공식 문서를 기반으로 자연어 질문에 출처 포함 답변.
             단순 키워드 검색이 아닌 문서 기반 RAG 방식으로 신뢰도 확보.
           </p>
         </div>
         <div class="auto-feature">
-          <h4 class="auto-feature-title">📈 자체 분석 모듈 (Redis)</h4>
-          <p class="auto-feature-desc">
+          <h4 class="auto-feature-title" data-ko="📈 자체 분석 모듈 (Redis)" data-en="📈 Analytics Module (Redis)">📈 자체 분석 모듈 (Redis)</h4>
+          <p class="auto-feature-desc" data-ko="Upstash Redis 연동, 도구별 실사용 횟수 실시간 집계. 오너 모드 · 세션 중복방지까지 직접 설계한 데이터 파이프라인." data-en="Upstash Redis integration, real-time usage count tracking per tool. Self-designed data pipeline with owner mode and session deduplication.">
             Upstash Redis 연동, 도구별 실사용 횟수 실시간 집계. 오너 모드 · 세션 중복방지까지
             직접 설계한 데이터 파이프라인.
           </p>
@@ -592,8 +635,8 @@
   <section class="section contact-section" id="contact">
     <div class="reveal">
       <span class="section-label"><span class="dot"></span> Contact</span>
-      <h2 class="section-title">함께 일해요</h2>
-      <p class="section-subtitle" style="margin: 0 auto;">
+      <h2 class="section-title" data-ko="함께 일해요" data-en="Let's Work Together">함께 일해요</h2>
+      <p class="section-subtitle" style="margin: 0 auto;" data-ko="새로운 도전과 기회를 찾고 있습니다. 편하게 연락주세요." data-en="Looking for new challenges and opportunities. Feel free to reach out.">
         새로운 도전과 기회를 찾고 있습니다. 편하게 연락주세요.
       </p>
     </div>
@@ -614,9 +657,90 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <p>© 2025 박형권. Built with passion & data.</p>
+    <p data-ko="© 2025 박형권. Built with passion &amp; data." data-en="© 2025 Park Hyeonggwon. Built with passion &amp; data." data-i18n-mode="html">© 2025 박형권. Built with passion & data.</p>
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- Language Toggle Script -->
+  <script>
+  (function() {
+    'use strict';
+
+    // --- Language Toggle Logic ---
+    const STORAGE_KEY = 'portfolio-lang';
+    let currentLang = localStorage.getItem(STORAGE_KEY) || 'ko';
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem(STORAGE_KEY, lang);
+      document.documentElement.lang = lang;
+
+      // Update toggle button active state
+      document.querySelectorAll('.lang-toggle-option').forEach(function(opt) {
+        opt.classList.toggle('active', opt.dataset.lang === lang);
+      });
+
+      // Update resume link
+      var resumeLink = document.getElementById('resumeLink');
+      if (resumeLink) {
+        resumeLink.href = lang === 'ko' ? 'resume-kr.html' : 'resume-en.html';
+      }
+
+      // Update all i18n elements
+      document.querySelectorAll('[data-ko][data-en]').forEach(function(el) {
+        var text = el.getAttribute('data-' + lang);
+        if (!text) return;
+
+        // Determine if we should use innerHTML or textContent
+        var mode = el.getAttribute('data-i18n-mode');
+        var useHTML = (mode === 'html' || mode === 'badge');
+
+        // For badge mode, preserve the status-dot
+        if (mode === 'badge') {
+          var dot = el.querySelector('.status-dot');
+          if (dot) {
+            el.innerHTML = '';
+            el.appendChild(dot);
+            el.insertAdjacentHTML('beforeend', ' ' + text);
+          } else {
+            el.innerHTML = text;
+          }
+          return;
+        }
+
+        if (useHTML || text.indexOf('<') !== -1) {
+          el.innerHTML = text;
+        } else {
+          el.textContent = text;
+        }
+      });
+    }
+
+    // Initialize on DOM ready
+    function init() {
+      var toggle = document.getElementById('langToggle');
+      if (toggle) {
+        toggle.addEventListener('click', function(e) {
+          var option = e.target.closest('.lang-toggle-option');
+          if (!option) return;
+          var lang = option.dataset.lang;
+          if (lang && lang !== currentLang) {
+            applyLanguage(lang);
+          }
+        });
+      }
+
+      // Apply saved language on load
+      applyLanguage(currentLang);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+  </script>
 </body>
 </html>
