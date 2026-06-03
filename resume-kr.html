@@ -390,6 +390,8 @@
     }
 
     .skill-category {
+      display: flex;
+      gap: 6px;
       font-size: 1.3rem;
       line-height: 1.7;
     }
@@ -397,13 +399,12 @@
     .skill-label {
       font-weight: 600;
       color: var(--text-primary);
-      margin-right: 6px;
-      display: inline;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .skill-items {
       color: var(--text-secondary);
-      display: inline;
     }
 
     /* ===== Education ===== */
