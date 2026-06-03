@@ -263,7 +263,7 @@
       background: linear-gradient(135deg, #f0f9ff 0%, #ede9fe 50%, #f0fdfa 100%);
       border-radius: 10px;
       padding: 16px 18px;
-      margin-bottom: 22px;
+      margin-bottom: 14px;
       border-left: 4px solid #3b82f6;
       position: relative;
     }
@@ -279,6 +279,99 @@
       color: #1e40af;
       font-weight: 600;
     }
+
+    /* --- Key Message Quote --- */
+    .key-message {
+      text-align: center;
+      padding: 10px 16px;
+      margin-bottom: 18px;
+    }
+
+    .key-message q {
+      font-size: 1.15rem;
+      color: #475569;
+      font-style: italic;
+      font-weight: 500;
+      line-height: 1.7;
+      quotes: "\201C" "\201D";
+    }
+
+    .key-message q::before {
+      color: #3b82f6;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .key-message q::after {
+      color: #3b82f6;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    /* --- KPI Cards --- */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .kpi-card {
+      text-align: center;
+      padding: 12px 8px 10px;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      background: #fafbfc;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+    }
+
+    .kpi-card.field::before  { background: linear-gradient(to right, #10b981, #34d399); }
+    .kpi-card.plan::before   { background: linear-gradient(to right, #3b82f6, #60a5fa); }
+    .kpi-card.ai::before     { background: linear-gradient(to right, #8b5cf6, #a78bfa); }
+    .kpi-card.vision::before { background: linear-gradient(to right, #f59e0b, #fbbf24); }
+
+    .kpi-icon {
+      font-size: 1.8rem;
+      margin-bottom: 4px;
+    }
+
+    .kpi-value {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.3;
+    }
+
+    .kpi-label {
+      font-size: 0.95rem;
+      color: #64748b;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .kpi-tag {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 1px 7px;
+      border-radius: 3px;
+      margin-top: 5px;
+    }
+
+    .kpi-tag.field  { background: #d1fae5; color: #065f46; }
+    .kpi-tag.plan   { background: #dbeafe; color: #1e40af; }
+    .kpi-tag.ai     { background: #ede9fe; color: #5b21b6; }
+    .kpi-tag.vision { background: #fef3c7; color: #92400e; }
 
     /* --- Section --- */
     .section {
@@ -363,6 +456,40 @@
       color: #3b82f6;
       font-weight: 500;
       margin-bottom: 8px;
+    }
+
+    /* --- Domain Tags for Experience --- */
+    .exp-tags {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .domain-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 2px 9px;
+      border-radius: 4px;
+      letter-spacing: 0.3px;
+    }
+
+    .domain-tag.field {
+      background: #d1fae5;
+      color: #065f46;
+    }
+
+    .domain-tag.plan {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .domain-tag.ai {
+      background: #ede9fe;
+      color: #5b21b6;
     }
 
     .exp-list {
@@ -562,6 +689,26 @@
         print-color-adjust: exact !important;
       }
 
+      .kpi-card {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .kpi-card::before {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .kpi-tag {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .domain-tag {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
       @page {
         size: A4;
         margin: 0;
@@ -608,6 +755,10 @@
       .project-grid {
         grid-template-columns: 1fr;
       }
+
+      .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   </style>
 </head>
@@ -620,7 +771,7 @@
     <div class="profile">
       <div class="profile-avatar">박</div>
       <div class="profile-name">박형권</div>
-      <div class="profile-title">기획형 올라운더<br>현장 × 데이터 × AI</div>
+      <div class="profile-title">기획형 올라운더<br>현업 × 기획 × AI</div>
     </div>
 
     <!-- Contact -->
@@ -786,6 +937,39 @@
       </p>
     </div>
 
+    <!-- Key Message -->
+    <div class="key-message">
+      <q>현장을 알아야 기획을 할 수 있고, 이제는 AI를 알아야 기획을 할 수 있습니다.</q>
+    </div>
+
+    <!-- KPI Cards -->
+    <div class="kpi-grid">
+      <div class="kpi-card field">
+        <div class="kpi-icon">🏭</div>
+        <div class="kpi-value">공정 · 장비</div>
+        <div class="kpi-label">TFT Photo 양산</div>
+        <span class="kpi-tag field">현업</span>
+      </div>
+      <div class="kpi-card plan">
+        <div class="kpi-icon">📊</div>
+        <div class="kpi-value">400명</div>
+        <div class="kpi-label">인력 효율화 달성</div>
+        <span class="kpi-tag plan">기획</span>
+      </div>
+      <div class="kpi-card ai">
+        <div class="kpi-icon">🤖</div>
+        <div class="kpi-value">알고리즘 2건</div>
+        <div class="kpi-label">독자 개발 · 수율 개선</div>
+        <span class="kpi-tag ai">AI</span>
+      </div>
+      <div class="kpi-card vision">
+        <div class="kpi-icon">🚀</div>
+        <div class="kpi-value">Y+3 PJT</div>
+        <div class="kpi-label">초대형 프로젝트 기획</div>
+        <span class="kpi-tag vision">통합</span>
+      </div>
+    </div>
+
     <!-- Experience -->
     <div class="section">
       <h2 class="section-title">
@@ -799,27 +983,35 @@
           <span class="exp-period">2025.02 — 현재</span>
         </div>
         <div class="exp-company">LG Display · AI 수율개선팀 (사내공모 전환)</div>
+        <div class="exp-tags">
+          <span class="domain-tag ai">AI</span>
+          <span class="domain-tag field">현업</span>
+        </div>
         <ul class="exp-list">
           <li>Python 기반 데이터 파이프라인 <strong>End-to-End</strong> 구축</li>
-          <li>변화점 탐지(CPD) 알고리즘 독자 개발 → 최적 관리선 도출</li>
-          <li>수율 <strong>0.13%p 개선</strong> → CEO BP 보고, AX 협업 우수 사례 선정 <span class="exp-highlight">CEO 보고</span></li>
-          <li>향후 계획 : 완전자동 불량분석 Agent 개발 (Y+3, 팀프로젝트)</li>
+          <li>변화점 탐지(CPD) · 이상탐지 알고리즘 <strong>2건</strong> 독자 개발 → 최적 관리선 도출</li>
+          <li>수율 <strong>0.13%p 개선</strong> 성과로 CEO BP 보고 및 AX 협업 우수 사례 선정</li>
+          <li>향후 계획 : LLM/RAG 기반 완전자동 불량분석 Agent 개발 (Y+3 초대형 PJT)</li>
         </ul>
       </div>
 
       <!-- Planning -->
       <div class="exp-card">
         <div class="exp-header">
-          <span class="exp-role">기획 / 인력운영 담당 <span style="font-size: 1.05rem; color: #3b82f6; font-weight: 500;">(선임→책임 조기진급)</span></span>
+          <span class="exp-role">기획 / 인력운영 담당</span>
           <span class="exp-period">2019.03 — 2025.02</span>
         </div>
         <div class="exp-company">LG Display · 중대형 제조기획2팀</div>
+        <div class="exp-tags">
+          <span class="domain-tag plan">기획</span>
+          <span class="domain-tag field">현업</span>
+        </div>
         <ul class="exp-list">
           <li>KPI 기획/관리, 수익성 극대화 미션 수립</li>
           <li>'필요 인원 산출 기준' 정립 (물동·Capa·설비 데이터 기반)</li>
-          <li>기능직 <strong>30%(400명 규모)</strong> 인력 효율화 달성 <span class="exp-highlight">400명 효율화</span></li>
+          <li>기능직 <strong>30%(400명 규모)</strong> 인력 효율화 달성</li>
           <li>대규모 인사이동 연계 조직 심리 동인 분석</li>
-          <li>직무 역량 레벨 정의 및 교육 계획 수립</li>
+          <li>직무 역량 레벨 정의 및 교육 계획 수립 · 선임→책임 조기진급</li>
         </ul>
       </div>
 
@@ -830,6 +1022,9 @@
           <span class="exp-period">2017.08 — 2019.02</span>
         </div>
         <div class="exp-company">LG Display · P8 TFT1팀</div>
+        <div class="exp-tags">
+          <span class="domain-tag field">현업</span>
+        </div>
         <ul class="exp-list">
           <li>CDS(Coater & Developer System) 설비 담당</li>
           <li>Merck社 신규 약액 양산 라인 직도입 — 평가부터 조달까지 주도</li>
@@ -858,10 +1053,10 @@
         <div class="project-card featured">
           <div class="project-name"><span class="emoji">🔬</span> 수율 개선 알고리즘</div>
           <div class="project-year">2025</div>
-          <div class="project-desc">CPD 알고리즘 독자 개발, 수율 0.13%p↑, CEO 보고</div>
+          <div class="project-desc">CPD 알고리즘 독자 개발, 수율 0.13%p↑, AX 우수사례 선정</div>
           <div>
-            <span class="project-tag highlight">CEO 보고</span>
-            <span class="project-tag">AX 우수사례</span>
+            <span class="project-tag highlight">알고리즘 2건</span>
+            <span class="project-tag">수율 개선</span>
           </div>
         </div>
 
