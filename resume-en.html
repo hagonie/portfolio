@@ -350,40 +350,36 @@
     /* ===== Projects ===== */
     .project-grid {
       display: grid;
-      gap: 6px;
+      grid-template-columns: auto auto auto 1fr;
+      gap: 4px 8px;
+      align-items: baseline;
     }
 
     .project-item {
-      display: flex;
-      align-items: baseline;
-      justify-content: flex-start;
-      gap: 8px;
-      font-size: 1.16rem;
-      line-height: 1.55;
-      text-align: left;
+      display: contents;
     }
 
     .project-name {
       font-weight: 600;
+      font-size: 1.16rem;
       color: var(--text-primary);
       white-space: nowrap;
-      flex-shrink: 0;
     }
 
     .project-year {
-      font-size: 1.1rem;
+      font-size: 1.06rem;
       color: var(--text-tertiary);
       white-space: nowrap;
-      flex-shrink: 0;
     }
 
     .project-desc {
+      font-size: 1.16rem;
       color: var(--text-secondary);
+      line-height: 1.55;
     }
 
     .project-dot {
       color: var(--border);
-      flex-shrink: 0;
     }
 
     /* ===== Skills ===== */
