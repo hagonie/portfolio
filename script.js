@@ -32,8 +32,9 @@ function initNavbar() {
   // Smooth scroll for nav links
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', (e) => {
-      e.preventDefault();
       const targetId = link.getAttribute('href');
+      if (!targetId || !targetId.startsWith('#')) return; // 외부 링크는 그대로 동작
+      e.preventDefault();
       const target = document.querySelector(targetId);
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
