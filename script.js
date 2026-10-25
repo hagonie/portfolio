@@ -120,7 +120,6 @@ function initCountUp() {
 function animateCount(el, target) {
   const duration = 2000;
   const startTime = performance.now();
-  const suffix = target >= 100 ? '명' : '+';
 
   function update(currentTime) {
     const elapsed = currentTime - startTime;
@@ -129,6 +128,7 @@ function animateCount(el, target) {
     // Ease out cubic
     const eased = 1 - Math.pow(1 - progress, 3);
     const current = Math.round(eased * target);
+    const suffix = target >= 100 ? (document.documentElement.lang === 'en' ? '' : '명') : '+';
 
     el.textContent = current.toLocaleString() + (progress >= 1 ? suffix : '');
 
